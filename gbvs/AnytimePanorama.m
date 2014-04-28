@@ -1,5 +1,6 @@
 %% Parameters for the program
 highres_img = imread('84.tiff');
+gbvs_install
 
 final_dim = size(highres_img);
 tile_dim =  [3456, 5184, 3];    % Alter as needed
@@ -47,7 +48,10 @@ subsampled_locs = round((1/subsampling_factor) * tile_locations);
 
 %%
 
-imp_tiles = find_tiles_of_interest(subsampled_img, subsampled_locs);
+
+[imp_tiles_key,imp_tiles_one,imp_tiles_sal,imp_tiles_two] = find_tiles_of_interest(subsampled_img, subsampled_locs);
+imp_tiles = bitor(imp_tiles_key, imp_tiles_sal);
+
 %%
 for i = 1:num_rows
     for j = 1:num_cols

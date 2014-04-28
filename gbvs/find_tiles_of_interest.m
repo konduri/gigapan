@@ -12,8 +12,6 @@ pts_gilles =  gilles(im);
 poi        =  [pts_harris ; pts_gilles(:,1:2)];%pts_log(:,1:2) ; pts_gilles(:,1:2)];
 sz         = size(ss_loc);
 
-
-
 % a = subsampled_img;
 map_gbvs = gbvs(im);
 map_itti = ittikochmap(im);
@@ -52,9 +50,9 @@ for i = 1:sz(1)*sz(2)
    end
 end
        
-
-sum(counter_key(:))
-size(poi)
+% 
+% sum(counter_key(:))
+% size(poi)
 
 mean_thres_key = mean(counter_key);
 mean_thres_sal = mean(counter_sal);
@@ -75,12 +73,6 @@ imp_tiles_two  = counter_sal;
 % plot(pts_harris(:,2),pts_harris(:,1),'*');
 % title('Image with harris corner detector')
 % 
-% %%
-% % figure
-% % imshow(im)
-% % hold on
-% % plot(pts_log(:,2),pts_log(:,1),'*');
-% % title('Image with log detector')
 % 
 % %%
 % figure
